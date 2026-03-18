@@ -1,0 +1,15 @@
+! R3 Configuration
+
+interface g0/0/1
+  no shutdown 
+  ip address 10.10.10.2 255.255.255.252
+  exit
+
+interface g0/0/0
+  no shutdown 
+  ip address 10.10.20.2 255.255.255.252
+  exit
+!
+router bgp 300
+  neighbor 10.10.10.1 remote-as 100
+  neighbor 10.10.20.1 remote-as 200
