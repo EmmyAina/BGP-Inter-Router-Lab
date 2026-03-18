@@ -1,0 +1,12 @@
+! R1 Configuration
+interface GigabitEthernet0/0/0
+ ip address 192.168.100.1 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/0/1
+ ip address 10.10.10.1 255.255.255.252
+ no shutdown
+!
+router bgp 100
+ neighbor 10.10.10.2 remote-as 300
+ network 192.168.100.0 mask 255.255.255.0
